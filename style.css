@@ -1,0 +1,94 @@
+/* ---------- reset ---------- */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  background: #ffffff;
+  display: grid;
+  place-items: center;
+  padding: clamp(24px, 6vh, 64px) 20px;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* ---------- page layout (grid) ---------- */
+.home {
+  width: 100%;
+  max-width: 640px;
+  display: grid;
+  grid-template-rows: auto auto auto;
+  justify-items: center;
+  row-gap: clamp(24px, 5vh, 48px);
+}
+
+/* ---------- logo ---------- */
+.logo-link {
+  display: inline-block;
+}
+
+.logo {
+  width: clamp(220px, 34vw, 420px);
+}
+
+/* ---------- home image ---------- */
+.home-image {
+  width: clamp(100px, 40vw, 380px);
+}
+
+.home-image img {
+  width: 100%;
+  border-radius: 2px;
+}
+
+/* ---------- nav buttons ---------- */
+.nav {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  align-items: center;
+  justify-content: center;
+  column-gap: clamp(16px, 3vw, 40px);
+  row-gap: 18px;
+}
+
+.nav-item {
+  display: inline-flex;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.nav-item:hover,
+.nav-item:focus-visible {
+  transform: translateY(-3px) scale(1.04);
+  opacity: 0.9;
+}
+
+.nav-item img {
+  height: clamp(48px, 8vw, 74px);
+  width: auto;
+}
+
+/* ---------- mobile: stack nav vertically ---------- */
+@media (max-width: 640px) {
+  .nav {
+    grid-template-columns: 1fr;
+    row-gap: 16px;
+  }
+
+  .nav-item img {
+    height: clamp(58px, 13vw, 78px);
+  }
+}
